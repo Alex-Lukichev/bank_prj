@@ -1,6 +1,4 @@
-from src.masks import get_mask_account, get_mask_card_number
+from src.widget import get_date, mask_account_card
 
-card_number: str = input()
-print(get_mask_card_number(card_number))
-account_number: str = input()
-print(get_mask_account(account_number))
+print(mask_account_card(input("Insert your card or account: ")))
+print(get_date(input("Insert date and time: ")))

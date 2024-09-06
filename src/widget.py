@@ -15,5 +15,14 @@ def mask_account_card(card_or_acc_number: str) -> str:
     return ' '.join(number_list)
 
 
+def get_date(date_time: str) -> str:
+    """Функция возвращает дату в формате ДД.ММ.ГГГГ"""
+    _year = date_time[0:4]
+    _month = date_time[5:7]
+    _day = date_time[8:10]
+    return '.'.join([_day, _month, _year])
+
+
 if __name__ == '__main__':
-    print(mask_account_card(input("Insert your card or account: ")))
+    # print(mask_account_card(input("Insert your card or account: ")))
+    print(get_date(input("Insert date and time: ")))

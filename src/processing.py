@@ -1,6 +1,7 @@
 from datetime import datetime
 from typing import List
 
+
 def filter_by_state(list_of_dict: List[dict], state_value: str = "EXECUTED") -> List[dict]:
     """Функция возвращает список словарей, отфильтрованный по заданному параметру state."""
     filtered_list = list()
@@ -8,6 +9,7 @@ def filter_by_state(list_of_dict: List[dict], state_value: str = "EXECUTED") -> 
         if el["state"] == state_value:
             filtered_list.append(el)
     return filtered_list
+
 
 def sort_by_date(list_of_dict: List[dict], sort_order: bool = True) -> List[dict]:
     """Функция сортирует список словарей по дате, параметр по умолчанию - по убыванию."""

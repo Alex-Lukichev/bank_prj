@@ -35,6 +35,6 @@ def get_date(date_time: str) -> str:
     return converted_date
 
 
-if __name__ == "__main__":
-    print(mask_account_card(input("Insert your card or account: ")))
-    print(get_date(input("Insert date and time: ")))
+# if __name__ == "__main__":
+#     print(mask_account_card(input("Insert your card or account: ")))
+#     print(get_date(input("Insert date and time: ")))

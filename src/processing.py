@@ -13,7 +13,10 @@ def filter_by_state(list_of_dict: List[dict], state_value: str = "EXECUTED") -> 
 
 def sort_by_date(list_of_dict: List[dict], sort_order: bool = True) -> List[dict]:
     """Функция сортирует список словарей по дате, параметр по умолчанию - по убыванию."""
-    sorted_list = sorted(list_of_dict, key=lambda x: datetime.fromisoformat(x["date"]), reverse=sort_order)
+    try:
+        sorted_list = sorted(list_of_dict, key=lambda x: datetime.fromisoformat(x["date"]), reverse=sort_order)
+    except ValueError as e:
+        raise ValueError(f"Неверный формат даты: {e}")
     return sorted_list
 
 

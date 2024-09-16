@@ -24,11 +24,15 @@ def mask_account_card(card_input: str) -> str:
 def get_date(date_time: str) -> str:
     """Функция возвращает дату в формате ДД.ММ.ГГГГ"""
     if date_time == "":
-        raise ValueError("Пустая строка")
-    else:
+        raise ValueError("Получен пустой ввод")
+
+    try:
         decoded_datetime = datetime.strptime(date_time, "%Y-%m-%dT%H:%M:%S.%f")
-        converted_date = decoded_datetime.strftime("%d.%m.%Y")
-        return converted_date
+    except ValueError:
+        raise ValueError("Формат 'дата-время' на входе некорректный, ожидаемый формат: YYYY-MM-DDTHH:MM:SS.ssssss")
+
+    converted_date = decoded_datetime.strftime("%d.%m.%Y")
+    return converted_date
 
 
 if __name__ == "__main__":

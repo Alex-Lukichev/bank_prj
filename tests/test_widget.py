@@ -45,3 +45,8 @@ def test_get_date(date_input):
 def test_get_date_empty():
     with pytest.raises(ValueError):
         get_date("")
+
+
+def test_get_date_incorrect_format():
+    with pytest.raises(ValueError):
+        get_date("2024-03-11 02:26:18.671407")

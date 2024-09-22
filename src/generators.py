@@ -1,54 +1,43 @@
-import pytest
 
 
-@pytest.fixture
-def date_input():
-    return "2024-03-11T02:26:18.671407"
+def filter_by_currency(transactions, currency):
+    for transaction in transactions:
+        if transaction["operationAmount"]["currency"]["code"] == currency:
+            yield transaction
 
 
-@pytest.fixture
-def list_transactions1():
-    return [
-        {"id": 41428829, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-        {"id": 939719570, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-        {"id": 594226727, "state": "CANCELED", "date": "2018-09-12T21:27:25.241689"},
-        {"id": 615064591, "state": "CANCELED", "date": "2018-10-14T08:21:33.419441"},
-    ]
+def transaction_descriptions(transactions):
+    for transaction in transactions:
+        yield transaction["description"]
 
 
-@pytest.fixture
-def list_transactions2():
-    return [
-        {"id": 112233445, "state": "CANCELED", "date": "2021-01-30T18:35:29.512364"},
-        {"id": 343455333, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-        {"id": 322211344, "state": "EXECUTED", "date": "2018-09-12T21:27:25.241689"},
-        {"id": 666555443, "state": "CANCELED", "date": "2018-09-12T21:30:00.241689"},
-    ]
+def card_number_generator(first_diap_val: int, last_diap_val: int) -> str:
+    if 1 <= first_diap_val <= 9999999999999999 and 1 <= last_diap_val <= 9999999999999999:
+        new_card = "0000000000000000"
+        for number in range(first_diap_val, last_diap_val+1):
+            gen_number = new_card[:-len(str(number))] + str(number)
+            yield " ".join([gen_number[i:i+4] for i in range(0, len(gen_number), 4)])
 
 
-@pytest.fixture
-def list_transactions_same_state():
-    return [
-        {"id": 11111, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-        {"id": 22222, "state": "EXECUTED", "date": "2018-06-30T02:08:58.425572"},
-        {"id": 33333, "state": "EXECUTED", "date": "2018-09-12T21:27:25.241689"},
-        {"id": 44444, "state": "EXECUTED", "date": "2018-09-12T21:30:00.241689"},
-    ]
 
 
-@pytest.fixture
-def list_transactions_invalid_dates():
-    return [
-        {"id": 123456789, "state": "EXECUTED", "date": "2019-07-03T18:35:29.512364"},
-        {"id": 987654321, "state": "CANCELED", "date": "2019/07/03"},  # Некорректный формат
-        {"id": 112233445, "state": "EXECUTED", "date": "2019-13-03T18:35:29.512364"},  # Некорректный месяц
-        {"id": 998877665, "state": "EXECUTED", "date": "invalid-date"},  # Некорректный формат
-        {"id": 778899001, "state": "CANCELED", "date": ""},  # Нет даты
-    ]
+    else:
+        raise ValueError("Некорректные начальное и конечное значения диапазона")
 
 
-@pytest.fixture
-def transactions_input():
+"""
+
+
+>>> 0000 0000 0000 0001
+    0000 0000 0000 0002
+    0000 0000 0000 0003
+    0000 0000 0000 0004
+    0000 0000 0000 0005
+"""
+
+
+
+if __name__ == "__main__":
     transactions = (
         [
             {
@@ -128,4 +117,15 @@ def transactions_input():
             }
         ]
     )
-    return transactions
+    usd_transactions = filter_by_currency(transactions, "USD")
+    for _ in range(2):
+        print(next(usd_transactions))
+
+    descriptions = transaction_descriptions(transactions)
+    for _ in range(5):
+        print(next(descriptions))
+
+    for card_number in card_number_generator(1, 5):
+        print(card_number)
+
+    # card_number_generator(1, 10)

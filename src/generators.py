@@ -1,39 +1,40 @@
+from typing import List
 
 
-def filter_by_currency(transactions, currency):
+def filter_by_currency(transactions: List[dict], currency: str) -> dict or str:
+    """ Итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной."""
+    if not transactions:
+        raise ValueError("Пустой список операций")
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
+    while True:
+        yield "Конец списка операций"
 
 
-def transaction_descriptions(transactions):
+def transaction_descriptions(transactions: List[dict]) -> str:
+    """ Генератор принимает список словарей с транзакциями и возвращает описание каждой операции по очереди. """
+    if not transactions:
+        raise ValueError("Пустой список операций")
     for transaction in transactions:
         yield transaction["description"]
+    while True:
+        yield "Конец списка операций"
 
 
 def card_number_generator(first_diap_val: int, last_diap_val: int) -> str:
+    """ Генератор выдает номера банковских карт в формате XXXX XXXX XXXX XXXX. """
+    if not first_diap_val or not last_diap_val:
+        raise ValueError("Диапазон не задан")
+    if not isinstance(first_diap_val, int) or not isinstance(last_diap_val, int):
+        raise ValueError("Тип данных не 'integer'")
     if 1 <= first_diap_val <= 9999999999999999 and 1 <= last_diap_val <= 9999999999999999:
         new_card = "0000000000000000"
         for number in range(first_diap_val, last_diap_val+1):
             gen_number = new_card[:-len(str(number))] + str(number)
             yield " ".join([gen_number[i:i+4] for i in range(0, len(gen_number), 4)])
-
-
-
-
     else:
         raise ValueError("Некорректные начальное и конечное значения диапазона")
-
-
-"""
-
-
->>> 0000 0000 0000 0001
-    0000 0000 0000 0002
-    0000 0000 0000 0003
-    0000 0000 0000 0004
-    0000 0000 0000 0005
-"""
 
 
 
@@ -127,5 +128,3 @@ if __name__ == "__main__":
 
     for card_number in card_number_generator(1, 5):
         print(card_number)
-
-    # card_number_generator(1, 10)

@@ -5,6 +5,7 @@ def filter_by_currency(transactions: List[dict], currency: str) -> Generator[Uni
     """Итератор, который поочередно выдает транзакции, где валюта операции соответствует заданной."""
     if not transactions:
         raise ValueError("Пустой список операций")
+
     for transaction in transactions:
         if transaction["operationAmount"]["currency"]["code"] == currency:
             yield transaction
@@ -87,13 +88,21 @@ def card_number_generator(first_diap_val: int, last_diap_val: int) -> Generator[
 #             "to": "Счет 14211924144426031657",
 #         },
 #     ]
+#
+#
 #     usd_transactions = filter_by_currency(transactions, "USD")
-#     for _ in range(2):
-#         print(next(usd_transactions))
+#     try:
+#         for _ in range(2):
+#             print(next(usd_transactions))
+#     except StopIteration:
+#         print("No more transactions available.")
 #
 #     descriptions = transaction_descriptions(transactions)
-#     for _ in range(5):
-#         print(next(descriptions))
+#     try:
+#         for _ in range(5):
+#             print(next(descriptions))
+#     except StopIteration:
+#         print("No more descriptions available.")
 #
 #     for card_number in card_number_generator(1, 5):
 #         print(card_number)

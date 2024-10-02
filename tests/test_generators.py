@@ -43,13 +43,11 @@ def test_filter_by_currency(request, fixture_name, currency, expected_output):
     assert next(gen_filter_by_currency) == expected_output[1]
 
 
-@pytest.mark.parametrize(
-    "fixture_name, currency, expected_output", [("transactions_input", "EUR", "Конец списка операций")]
-)
-def test_filter_by_currency_no_such_currency(request, fixture_name, currency, expected_output):
-    input_list = request.getfixturevalue(fixture_name)
-    gen_filter_by_currency = filter_by_currency(input_list, currency)
-    assert next(gen_filter_by_currency) == expected_output
+def test_filter_by_currency_no_such_currency(transactions_input, currency="EUR"):
+    gen_filter_by_currency = filter_by_currency(transactions_input, currency)
+    # assert next(gen_filter_by_currency) == expected_output
+    with pytest.raises(StopIteration):
+        next(gen_filter_by_currency)
 
 
 def test_filter_by_currency_empty_input(transactions=[], currency="USD"):
@@ -70,8 +68,8 @@ def test_transaction_descriptions(transactions_input):
     assert next(descriptions) == "Перевод со счета на счет"
     assert next(descriptions) == "Перевод с карты на карту"
     assert next(descriptions) == "Перевод организации"
-    assert next(descriptions) == "Конец списка операций"
-    assert next(descriptions) == "Конец списка операций"
+    with pytest.raises(StopIteration):
+        next(descriptions)
 
 
 def test_transaction_descriptions_empty_input(transactions=[]):
@@ -127,6 +125,12 @@ def test_card_number_generator_17digits(first_diap_test=1, last_diap_test=123456
 
 
 def test_card_number_generator_not_integer(first_diap_test=1, last_diap_test="5"):
+    card_number_test = card_number_generator(first_diap_test, last_diap_test)
+    with pytest.raises(ValueError):
+        next(card_number_test)
+
+
+def test_card_number_generator_max_first(first_diap_test=5, last_diap_test=2):
     card_number_test = card_number_generator(first_diap_test, last_diap_test)
     with pytest.raises(ValueError):
         next(card_number_test)

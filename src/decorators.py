@@ -1,8 +1,11 @@
-def log(filename=None):
+from typing import Any
+
+
+def log(filename: Any = None) -> Any:
     """Декоратор, автоматически логирует выполнение функции."""
 
-    def wrapper(func):
-        def inner(*args, **kwargs):
+    def wrapper(func: Any) -> Any:
+        def inner(*args: Any, **kwargs: Any) -> Any:
             try:
                 result = func(*args, **kwargs)
                 log_message = f"{func.__name__} ok"

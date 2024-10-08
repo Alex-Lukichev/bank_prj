@@ -65,7 +65,7 @@
             <a id="nextFileLink" class="nav" href="z_145eef247bfb46b6_generators_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.1">coverage.py v7.6.1</a>,
-            created at 2024-10-03 13:54 +0400
+            created at 2024-10-08 23:36 +0400
         </p>
         <aside class="hidden">
             <button type="button" class="button_next_chunk" data-shortcut="j"></button>
@@ -95,7 +95,7 @@
     <p class="run"><span class="n"><a id="t13" href="#t13">13</a></span><span class="t">    <span class="key">if</span> <span class="nam">tr_currency</span> <span class="op">!=</span> <span class="nam">to_currency</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t14" href="#t14">14</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t15" href="#t15">15</a></span><span class="t">        <span class="nam">load_dotenv</span><span class="op">(</span><span class="str">".env"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">        <span class="nam">API_KEY</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">getenv</span><span class="op">(</span><span class="str">"API_KEY"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t16" href="#t16">16</a></span><span class="t">        <span class="nam">API_KEY</span> <span class="op">=</span> <span class="nam">os</span><span class="op">.</span><span class="nam">getenv</span><span class="op">(</span><span class="str">"APILAYER_API_KEY"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t17" href="#t17">17</a></span><span class="t">        <span class="nam">url</span> <span class="op">=</span> <span class="op">(</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t18" href="#t18">18</a></span><span class="t">            <span class="fst">f"</span><span class="fst">https://api.apilayer.com/exchangerates_data/convert?to=</span><span class="op">{</span><span class="nam">to_currency</span><span class="op">}</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t19" href="#t19">19</a></span><span class="t">            <span class="fst">f"</span><span class="fst">&amp;from=</span><span class="op">{</span><span class="nam">tr_currency</span><span class="op">}</span><span class="fst">&amp;amount=</span><span class="op">{</span><span class="nam">tr_amount</span><span class="op">}</span><span class="fst">"</span>&nbsp;</span><span class="r"></span></p>
@@ -106,7 +106,7 @@
     <p class="run"><span class="n"><a id="t24" href="#t24">24</a></span><span class="t">        <span class="key">if</span> <span class="nam">response</span><span class="op">.</span><span class="nam">status_code</span> <span class="op">!=</span> <span class="num">200</span><span class="op">:</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t25" href="#t25">25</a></span><span class="t">            <span class="key">raise</span> <span class="nam">ValueError</span><span class="op">(</span><span class="str">"Failed to get converted amount"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t26" href="#t26">26</a></span><span class="t">        <span class="nam">data</span> <span class="op">=</span> <span class="nam">response</span><span class="op">.</span><span class="nam">json</span><span class="op">(</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
-    <p class="run"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">        <span class="nam">converted_amount</span><span class="op">:</span> <span class="nam">float</span> <span class="op">=</span> <span class="nam">data</span><span class="op">.</span><span class="nam">get</span><span class="op">(</span><span class="str">"result"</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
+    <p class="run"><span class="n"><a id="t27" href="#t27">27</a></span><span class="t">        <span class="nam">converted_amount</span><span class="op">:</span> <span class="nam">float</span> <span class="op">=</span> <span class="nam">data</span><span class="op">[</span><span class="str">"result"</span><span class="op">]</span>&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t28" href="#t28">28</a></span><span class="t">        <span class="key">return</span> <span class="nam">round</span><span class="op">(</span><span class="nam">converted_amount</span><span class="op">,</span> <span class="num">2</span><span class="op">)</span>&nbsp;</span><span class="r"></span></p>
     <p class="pln"><span class="n"><a id="t29" href="#t29">29</a></span><span class="t">&nbsp;</span><span class="r"></span></p>
     <p class="run"><span class="n"><a id="t30" href="#t30">30</a></span><span class="t">    <span class="key">return</span> <span class="nam">tr_amount</span>&nbsp;</span><span class="r"></span></p>
@@ -135,7 +135,7 @@
             <a class="nav" href="z_145eef247bfb46b6_generators_py.html">&#xbb; next</a>
             &nbsp; &nbsp; &nbsp;
             <a class="nav" href="https://coverage.readthedocs.io/en/7.6.1">coverage.py v7.6.1</a>,
-            created at 2024-10-03 13:54 +0400
+            created at 2024-10-08 23:36 +0400
         </p>
     </div>
 </footer>

@@ -25,7 +25,7 @@ class TestGetTransactionAmountRub(unittest.TestCase):
         }
         amount_rub = get_transaction_amount_rub(transaction)
         assert amount_rub == 772000.00
-        mock_getenv.assert_called_once_with("API_KEY")
+        mock_getenv.assert_called_once_with("APILAYER_API_KEY")
         mock_request.assert_called_once()
 
     @patch("os.getenv")
@@ -67,5 +67,5 @@ class TestGetTransactionAmountRub(unittest.TestCase):
         }
         with self.assertRaises(ValueError):
             get_transaction_amount_rub(transaction)
-        mock_getenv.assert_called_once_with("API_KEY")
+        mock_getenv.assert_called_once_with("APILAYER_API_KEY")
         mock_request.assert_called_once()

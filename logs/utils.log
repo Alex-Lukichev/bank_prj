@@ -1,0 +1,8 @@
+2024-10-08 23:36:13,383 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-08 23:36:13,383 - utils - INFO: Данные из файла data/operations.json получены
+2024-10-08 23:36:13,399 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-08 23:36:13,399 - utils - ERROR: Произошла ошибка чтения файла: Expecting value: line 1 column 1 (char 0)
+2024-10-08 23:36:13,399 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-08 23:36:13,399 - utils - WARNING: Данные из файла data/operations.json - не список
+2024-10-08 23:36:13,399 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-08 23:36:13,399 - utils - ERROR: Ошибка:  - файл data/operations.json не найден

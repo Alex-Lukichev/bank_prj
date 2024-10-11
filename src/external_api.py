@@ -13,7 +13,7 @@ def get_transaction_amount_rub(transaction: dict, to_currency: str = "RUB") -> f
     if tr_currency != to_currency:
 
         load_dotenv(".env")
-        API_KEY = os.getenv("API_KEY")
+        API_KEY = os.getenv("APILAYER_API_KEY")
         url = (
             f"https://api.apilayer.com/exchangerates_data/convert?to={to_currency}"
             f"&from={tr_currency}&amount={tr_amount}"
@@ -24,7 +24,7 @@ def get_transaction_amount_rub(transaction: dict, to_currency: str = "RUB") -> f
         if response.status_code != 200:
             raise ValueError("Failed to get converted amount")
         data = response.json()
-        converted_amount: float = data.get("result")
+        converted_amount: float = data["result"]
         return round(converted_amount, 2)
 
     return tr_amount

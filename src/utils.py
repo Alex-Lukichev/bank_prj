@@ -1,5 +1,6 @@
 import json
 import logging
+from pathlib import Path
 
 logger = logging.getLogger("utils")
 logger.setLevel(logging.DEBUG)
@@ -9,7 +10,7 @@ file_handler.setFormatter(file_formatter)
 logger.addHandler(file_handler)
 
 
-def read_operations(path: str) -> list:
+def read_operations(path: Path) -> list:
     """Получение списка словарей с данными о финансовых транзакциях"""
     try:
         logger.debug(f"Чтение данных из файла {path}")

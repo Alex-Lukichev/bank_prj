@@ -20,6 +20,31 @@ def sort_by_date(list_of_dict: List[dict], sort_order: bool = True) -> List[dict
     return sorted_list
 
 
+def json_transactions_reformat(transactions: List[dict]) -> List[dict]:
+    # Функция переформатирует список словарей со структурой данных из JSON-файла в структуру данных CSV и Excel-файлов.
+    new_transactions = []
+    for transaction in transactions:
+        if not transaction:
+            continue
+        new_dict = {
+            'id': transaction.get('id'),
+            'state': transaction.get('state'),
+            'date': transaction.get('date'),
+            'amount': transaction.get('operationAmount', {}).get('amount', ''),
+            'currency_name': transaction.get('operationAmount', {}).get('currency', {}).get('name', ''),
+            'currency_code': transaction.get('operationAmount', {}).get('currency', {}).get('code', ''),
+            'from': transaction.get('from', ''),
+            'to': transaction.get('to', ''),
+            'description': transaction.get('description', '')
+        }
+        new_transactions.append(new_dict)
+    return new_transactions
+
+def filter_transactions_by_currency(transactions: List[dict], currency_code: str = 'RUB') -> List[dict]:
+        # Функция возвращает список словарей, отфильтрованный по валюте; валюта по умолчанию 'RUB'.
+    filtered_transactions = [t for t in transactions if t.get('currency_code') == currency_code]
+    return filtered_transactions
+
 # if __name__ == "__main__":
 #     print(
 #         filter_by_state(

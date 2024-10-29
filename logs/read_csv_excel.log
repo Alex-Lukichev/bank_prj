@@ -1,0 +1,2 @@
+2024-10-29 16:21:33,660 - read_csv_excel - DEBUG: Чтение данных из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx
+2024-10-29 16:21:33,834 - read_csv_excel - INFO: Данные из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx получены

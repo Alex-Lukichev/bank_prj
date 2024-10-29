@@ -115,3 +115,68 @@ def test_df() -> pd.DataFrame:
         "description": ["Перевод организации", "Перевод с карты на карту"],
     }
     return pd.DataFrame(test_dict)
+
+
+@pytest.fixture
+def test_trans():
+    """Фикстура, создающая тестовый список словарей с транзакциями."""
+    return [
+        {
+            'id': 366176, 'state': 'EXECUTED', 'date': '2020-08-02T09:35:18Z', 'amount': 29482,
+            'currency_name': 'Rupiah', 'currency_code': 'IDR', 'from': 'Discover 0325955596714937',
+            'to': 'Visa 3820488829287420', 'description': 'Перевод с карты на карту'
+        },
+        {
+            'id': 3598919, 'state': 'EXECUTED', 'date': '2020-12-06T23:00:58Z', 'amount': 29740,
+            'currency_name': 'Peso', 'currency_code': 'COP', 'from': 'Discover 3172601889670065',
+            'to': 'Discover 0720428384694643', 'description': 'Перевод с карты на карту'
+        },
+        {
+            'id': 5294458, 'state': 'EXECUTED', 'date': '2022-06-20T18:08:20Z', 'amount': 16836,
+            'currency_name': 'руб.', 'currency_code': 'RUB', 'from': 'Visa 2759011965877198',
+            'to': 'Счет 38287443300766991082', 'description': 'Перевод с карты на карту'
+        },
+        {
+            'id': 3226899, 'state': 'EXECUTED', 'date': '2023-04-17T09:21:15Z', 'amount': 21680,
+            'currency_name': 'Koruna', 'currency_code': 'CZK', 'from': float('nan'),
+            'to': 'Счет 88329674734590848775', 'description': 'Открытие вклада'
+        },
+        {
+            'id': 5429839, 'state': 'CANCELED', 'date': '2023-06-23T19:46:34Z', 'amount': 25261,
+            'currency_name': 'Hryvnia', 'currency_code': 'UAH', 'from': float('nan'),
+            'to': 'Счет 76768135089446747029', 'description': 'Открытие вклада'
+        },
+        {
+            'id': 650703, 'state': 'CANCELED', 'date': '2023-09-05T11:30:32Z', 'amount': 16210,
+            'currency_name': 'Sol', 'currency_code': 'PEN', 'from': 'Счет 58803664561298323391',
+            'to': 'Счет 39745660563456619397', 'description': 'Перевод организации'
+        },
+        {
+            'id': 1962667, 'state': 'CANCELED', 'date': '2023-10-22T09:43:32Z', 'amount': 18588,
+            'currency_name': 'руб.', 'currency_code': 'RUB', 'from': 'Mastercard 7286844946221431',
+            'to': 'Счет 76145988629288763144', 'description': 'Перевод организации'
+        }
+    ]
+
+
+@pytest.fixture
+def json_trans():
+    """Фикстура, создающая тестовый список словарей co структурой данных из JSON-файла."""
+    return [
+              {
+                'id': 441945886,
+                'state': 'EXECUTED',
+                'date': '2019-08-26T10:50:58.294041',
+                'operationAmount': {
+                  'amount': 31957.58,
+                  'currency': {
+                    'name': 'руб.',
+                    'code': 'RUB'
+                  }
+                },
+                'description': 'Перевод организации',
+                'from': 'Maestro 1596837868705199',
+                'to': 'Счет 64686473678894779589'
+              }
+            ]
+

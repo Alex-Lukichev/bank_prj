@@ -1,2 +1,8 @@
-2024-10-29 16:21:33,660 - read_csv_excel - DEBUG: Чтение данных из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx
-2024-10-29 16:21:33,834 - read_csv_excel - INFO: Данные из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx получены
+2024-10-30 02:07:11,806 - read_csv_excel - DEBUG: Чтение данных из файла D:\PyProjects\bank_prj\data\transactions.csv
+2024-10-30 02:07:11,806 - read_csv_excel - INFO: Данные из файла D:\PyProjects\bank_prj\data\transactions.csv получены
+2024-10-30 02:07:11,806 - read_csv_excel - DEBUG: Чтение данных из файла 
+2024-10-30 02:07:11,806 - read_csv_excel - ERROR: Ошибка: [Errno 2] No such file or directory: '' - файл  не найден
+2024-10-30 02:07:11,821 - read_csv_excel - DEBUG: Чтение данных из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx
+2024-10-30 02:07:11,821 - read_csv_excel - INFO: Данные из файла D:\PyProjects\bank_prj\data\transactions_excel.xlsx получены
+2024-10-30 02:07:11,821 - read_csv_excel - DEBUG: Чтение данных из файла 
+2024-10-30 02:07:11,821 - read_csv_excel - ERROR: Ошибка: [Errno 2] No such file or directory: '' - файл  не найден

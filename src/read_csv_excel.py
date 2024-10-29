@@ -1,4 +1,3 @@
-import json
 import logging
 from pathlib import Path
 from typing import Dict, List
@@ -42,13 +41,13 @@ def get_transactions_from_excel(file_path: Path) -> List[Dict]:
         return []
 
 
-if __name__ == '__main__':
-
-    file_path_csv = BASE_DIR / 'data' / 'transactions_2.csv'
-    file_path_excel = BASE_DIR / 'data' / 'transactions_excel.xlsx'
-
-    # print(get_transactions_from_csv(file_path_csv))
-    test_load = get_transactions_from_excel(file_path_excel)
-
-    with open('test_file_for_read_excel.json', "w", encoding="utf-8") as file:
-        json.dump(test_load, file, ensure_ascii=False, indent=4)
+# if __name__ == '__main__':
+#
+#     file_path_csv = BASE_DIR / 'data' / 'transactions_2.csv'
+#     file_path_excel = BASE_DIR / 'data' / 'transactions_excel.xlsx'
+#
+#     # print(get_transactions_from_csv(file_path_csv))
+#     test_load = get_transactions_from_excel(file_path_excel)
+#
+#     with open('test_file_for_read_excel.json', "w", encoding="utf-8") as file:
+#         json.dump(test_load, file, ensure_ascii=False, indent=4)

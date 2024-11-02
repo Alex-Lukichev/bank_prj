@@ -1,7 +1,7 @@
 import pytest
 
-from src.processing import filter_by_state, sort_by_date
-
+from src.processing import filter_by_state, sort_by_date, json_transactions_reformat, filter_transactions_by_currency
+from tests.conftest import json_trans, test_trans
 
 @pytest.mark.parametrize(
     "fixture_name, state_val, expected_output",
@@ -67,3 +67,38 @@ def test_sort_by_date_invalid_formats(request, fixture_name, sort_order, expecte
     input_list = request.getfixturevalue(fixture_name)
     with pytest.raises(expected_exception):
         sort_by_date(input_list, sort_order)
+
+
+def test_json_transactions_reformat(json_trans):
+    result = json_transactions_reformat(json_trans)
+    assert result == [
+        {
+            'id': 441945886,
+            'state': 'EXECUTED',
+            'date': '2019-08-26T10:50:58.294041',
+            'amount': 31957.58,
+            'currency_name': 'руб.',
+            'currency_code': 'RUB',
+            'from': 'Maestro 1596837868705199',
+            'to': 'Счет 64686473678894779589',
+            'description': 'Перевод организации'
+        }
+    ]
+
+
+
+
+def test_filter_transactions_by_currency(test_trans, currency_code = 'RUB'):
+    result = filter_transactions_by_currency(test_trans, currency_code)
+    assert result == [
+        {
+            'id': 5294458, 'state': 'EXECUTED', 'date': '2022-06-20T18:08:20Z', 'amount': 16836,
+            'currency_name': 'руб.', 'currency_code': 'RUB', 'from': 'Visa 2759011965877198',
+            'to': 'Счет 38287443300766991082', 'description': 'Перевод с карты на карту'
+        },
+        {
+            'id': 1962667, 'state': 'CANCELED', 'date': '2023-10-22T09:43:32Z', 'amount': 18588,
+            'currency_name': 'руб.', 'currency_code': 'RUB', 'from': 'Mastercard 7286844946221431',
+            'to': 'Счет 76145988629288763144', 'description': 'Перевод организации'
+        }
+    ]

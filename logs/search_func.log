@@ -1,0 +1,38 @@
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '366176'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Запись id '366176' соответствует поисковой строке 'Перевод с карты на карту'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '3598919'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Запись id '3598919' соответствует поисковой строке 'Перевод с карты на карту'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '5294458'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Запись id '5294458' соответствует поисковой строке 'Перевод с карты на карту'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '3226899'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '5429839'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '650703'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '1962667'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '366176'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '3598919'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '5294458'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '3226899'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '5429839'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '650703'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_search_transactions: Проверка записи, имеющей id '1962667'
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 366176
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 366176 соответствует категории 'Перевод с карты на карту' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 3598919
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 3598919 соответствует категории 'Перевод с карты на карту' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 5294458
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 5294458 соответствует категории 'Перевод с карты на карту' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 3226899
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 3226899 соответствует категории 'Открытие вклада' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 5429839
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 5429839 соответствует категории 'Открытие вклада' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 650703
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 650703 соответствует категории 'Перевод организации' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 1962667
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Запись id : 1962667 соответствует категории 'Перевод организации' в списке категорий ['Перевод с карты на карту', 'Открытие вклада', 'Перевод организации']
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 366176
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 3598919
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 5294458
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 3226899
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 5429839
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 650703
+2024-10-30 02:07:11,821 - search_func - DEBUG: get_transactions_count: Проверка записи, имеющей id: 1962667

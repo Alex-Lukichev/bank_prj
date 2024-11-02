@@ -423,6 +423,17 @@ files = [
 ]
 
 [[package]]
+name = "nan"
+version = "0.1.2"
+description = "python client for neo node"
+optional = false
+python-versions = ">=3.6"
+files = [
+    {file = "nan-0.1.2-py3-none-any.whl", hash = "sha256:86b9d17b2789063c04c655f537607466778a2074cb20fdb9e1a8ba85e62f5e20"},
+    {file = "nan-0.1.2.tar.gz", hash = "sha256:5d2272b5e2a2b0b9bc2451b5f5027ca51b4554ec52ac84b537673a0984306f2e"},
+]
+
+[[package]]
 name = "numpy"
 version = "2.1.2"
 description = "Fundamental package for array computing in Python"
@@ -877,4 +888,4 @@ testing = ["coverage (>=5.0.3)", "zope.event", "zope.testing"]
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.12"
-content-hash = "f65bed46e37be91cdd1f4b06183fd4faad6b4ddbc15b323102d7b9bcbc4b4a63"
+content-hash = "717beeb4664ea9f2f5643d790da415209291da70c76e1ac0414f871d6a02be3c"

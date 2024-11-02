@@ -1,8 +1,10 @@
-2024-10-14 04:19:31,846 - utils - DEBUG: Чтение данных из файла data/operations.json
-2024-10-14 04:19:31,846 - utils - INFO: Данные из файла data/operations.json получены
-2024-10-14 04:19:31,846 - utils - DEBUG: Чтение данных из файла data/operations.json
-2024-10-14 04:19:31,846 - utils - ERROR: Произошла ошибка чтения файла: Expecting value: line 1 column 1 (char 0)
-2024-10-14 04:19:31,861 - utils - DEBUG: Чтение данных из файла data/operations.json
-2024-10-14 04:19:31,861 - utils - WARNING: Данные из файла data/operations.json - не список
-2024-10-14 04:19:31,861 - utils - DEBUG: Чтение данных из файла data/operations.json
-2024-10-14 04:19:31,861 - utils - ERROR: Ошибка:  - файл data/operations.json не найден
+2024-10-30 02:07:11,774 - utils - DEBUG: Чтение данных из файла D:\PyProjects\bank_prj\data\operations.json
+2024-10-30 02:07:11,774 - utils - INFO: Данные из файла D:\PyProjects\bank_prj\data\operations.json получены
+2024-10-30 02:07:11,821 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-30 02:07:11,821 - utils - INFO: Данные из файла data/operations.json получены
+2024-10-30 02:07:11,837 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-30 02:07:11,837 - utils - ERROR: Произошла ошибка чтения файла: Expecting value: line 1 column 1 (char 0)
+2024-10-30 02:07:11,837 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-30 02:07:11,837 - utils - WARNING: Данные из файла data/operations.json - не список
+2024-10-30 02:07:11,837 - utils - DEBUG: Чтение данных из файла data/operations.json
+2024-10-30 02:07:11,837 - utils - ERROR: Ошибка:  - файл data/operations.json не найден
